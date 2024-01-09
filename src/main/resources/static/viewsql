@@ -1,0 +1,10 @@
+drop view new_view;
+
+CREATE VIEW new_view AS
+SELECT *
+FROM (
+         SELECT e.*, ROW_NUMBER() OVER (PARTITION BY equip_code, code ORDER BY date DESC) AS row_num
+         FROM equipment_data e
+         WHERE equip_code IN ('S91887128','S55944314','S31518229','S31162116','S31378807','S12455592','S65324544', 'S90075012')
+     ) ranked
+WHERE row_num = 1;
