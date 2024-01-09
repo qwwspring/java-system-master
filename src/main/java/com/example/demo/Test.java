@@ -1,21 +1,31 @@
 package com.example.demo;
 
 import com.example.demo.bean.EquipmentData;
+
 import com.example.demo.bean.YuZhi;
 import com.example.demo.service.EquipmentDataService;
 import com.example.demo.service.YuZhiServive;
 import com.example.demo.service.impl.YuZhiServiceImpl;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
+
 
 @Controller
 @CrossOrigin
@@ -23,16 +33,20 @@ public class Test {
 
 
     private static EquipmentDataService equipmentDataService;
+
     private static YuZhiServive yuZhiService;
+
 
     @Autowired
     public void setEquipmentDataService(EquipmentDataService equipmentDataService){
         this.equipmentDataService = equipmentDataService;
     }
+
     @Autowired
     public void setYuZhiService(YuZhiServive yuZhiService){
         this.yuZhiService = yuZhiService;
     }
+
     @RequestMapping("/hello")
     public String gg(){
         System.out.println("---1111");
@@ -108,6 +122,7 @@ public class Test {
         return equipmentDataPage;
     }
 
+
     @RequestMapping("/save")
     @ResponseBody
     public Map<String,Object> save(@RequestBody YuZhi yuZhi){
@@ -123,6 +138,7 @@ public class Test {
         map.put("data",data);
         return map;
     }
+
 
 
 }

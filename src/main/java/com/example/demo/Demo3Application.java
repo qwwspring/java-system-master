@@ -16,7 +16,11 @@ public class Demo3Application {
         SpringApplication.run(Demo3Application.class, args);
        ConnectInfo connectInfo = new ConnectInfo("124.221.193.23", 8010, new dd(),
                 1, "DD122201");
+
    // DataTransferClient.run(connectInfo);
+
+    //DataTransferClient.run(connectInfo);
+
     }
 
 }

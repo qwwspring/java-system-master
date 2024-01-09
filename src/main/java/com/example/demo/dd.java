@@ -6,7 +6,7 @@ import com.example.demo.service.EquipmentDataService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mantoo.mtic.netty.data.DataTransfer;
-import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
